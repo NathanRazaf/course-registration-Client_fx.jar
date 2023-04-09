@@ -8,12 +8,12 @@ import server.models.Course;
 
 public class View extends HBox {
 
-    private TableView<Course> coursesTable;
-    private ComboBox<String> semesterComboBox;
-    private TextField firstNameTextField;
-    private TextField nameTextField;
-    private TextField emailTextField;
-    private TextField matriculeTextField;
+    private final TableView<Course> coursesTable;
+    private final ComboBox<String> semesterComboBox;
+    private final TextField firstNameTextField;
+    private final TextField nameTextField;
+    private final TextField emailTextField;
+    private final TextField matriculeTextField;
 
     public View() {
         // Set up left side of the window
