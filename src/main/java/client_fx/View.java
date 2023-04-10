@@ -3,25 +3,35 @@ package client_fx;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
 import server.models.Course;
 
 public class View extends HBox {
 
     private final TableView<Course> coursesTable;
+
+    private final TableColumn<Course, String> code;
+
+    private final TableColumn<Course, String> cours;
     private final ComboBox<String> semesterComboBox;
     private final TextField firstNameTextField;
     private final TextField nameTextField;
     private final TextField emailTextField;
     private final TextField matriculeTextField;
+    private final Button sendButton;
+    private final Button loadButton;
 
     public View() {
         // Set up left side of the window
         Label coursesTitleLabel = new Label("Liste des cours");
         coursesTitleLabel.setStyle("-fx-font-size: 20;");
         coursesTable = new TableView<>();
-        TableColumn code = new TableColumn("Code");
-        TableColumn cours = new TableColumn("Cours");
+
+        code = new TableColumn<>("Code");
+
+        cours = new TableColumn<>("Cours");
+
         coursesTable.getColumns().addAll(code, cours);
         coursesTable.setPrefWidth(300);
         coursesTable.setPrefHeight(200);
@@ -31,7 +41,7 @@ public class View extends HBox {
         semesterComboBox.getItems().addAll("Automne", "Ete", "Hiver");
         semesterComboBox.getSelectionModel().selectFirst();
 
-        Button loadButton = new Button("Charger");
+        loadButton = new Button("Charger");
         VBox leftVBox = new VBox(10, coursesTitleLabel, coursesTable, semesterComboBox, loadButton);
         leftVBox.setAlignment(Pos.TOP_CENTER);
         leftVBox.setPadding(new Insets(20));
@@ -47,7 +57,7 @@ public class View extends HBox {
         emailTextField = new TextField();
         Label matriculeLabel = new Label("Matricule");
         matriculeTextField = new TextField();
-        Button sendButton = new Button("Envoyer");
+        sendButton = new Button("Envoyer");
 
         // Create GridPane for labels and text fields
         GridPane formGrid = new GridPane();
@@ -79,6 +89,14 @@ public class View extends HBox {
         return coursesTable;
     }
 
+    public TableColumn<Course, String> getCode() {
+        return code;
+    }
+
+    public TableColumn<Course, String> getCours() {
+        return cours;
+    }
+
     public ComboBox<String> getSemesterComboBox() {
         return semesterComboBox;
     }
@@ -90,5 +108,22 @@ public class View extends HBox {
     public TextField getNameTextField() {
         return nameTextField;
     }
+
+    public TextField getEmailTextField() {
+        return emailTextField;
+    }
+
+    public TextField getMatriculeTextField() {
+        return matriculeTextField;
+    }
+
+    public Button getLoadButton() {
+        return loadButton;
+    }
+
+    public Button getSendButton() {
+        return sendButton;
+    }
 }
+
 

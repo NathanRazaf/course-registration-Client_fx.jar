@@ -7,4 +7,6 @@ module com.example.demo1 {
 
     opens client_fx to javafx.fxml;
     exports client_fx;
+
+    opens server.models to javafx.base;
 }
