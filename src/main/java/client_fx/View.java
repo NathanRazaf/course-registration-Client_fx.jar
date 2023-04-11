@@ -1,6 +1,7 @@
 package client_fx;
 
 import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -42,7 +43,12 @@ public class View extends HBox {
         semesterComboBox.getSelectionModel().selectFirst();
 
         loadButton = new Button("Charger");
-        VBox leftVBox = new VBox(10, coursesTitleLabel, coursesTable, semesterComboBox, loadButton);
+        HBox buttons = new HBox(10, semesterComboBox, loadButton);
+        buttons.setAlignment(Pos.TOP_CENTER);
+        buttons.setSpacing(100);
+        buttons.setPadding(new Insets(10));
+
+        VBox leftVBox = new VBox(10, coursesTitleLabel, coursesTable, buttons);
         leftVBox.setAlignment(Pos.TOP_CENTER);
         leftVBox.setPadding(new Insets(20));
 
@@ -79,7 +85,12 @@ public class View extends HBox {
         rightVBox.setPadding(new Insets(20));
 
         // Set up main layout
-        this.getChildren().addAll(leftVBox, rightVBox);
+        // Set background color
+        this.setStyle("-fx-background-color: #EFEBCE;");
+
+// Add separator between left VBox and right VBox
+        Separator separator = new Separator(Orientation.VERTICAL);
+        this.getChildren().addAll(leftVBox, separator, rightVBox);
         this.setSpacing(20);
         this.setAlignment(Pos.TOP_CENTER);
 
