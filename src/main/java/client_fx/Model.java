@@ -1,6 +1,7 @@
 package client_fx;
 
 import server.models.Course;
+import server.models.RegistrationForm;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -9,9 +10,6 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class Model {
-    public final static String FALL_SEMESTER = "Automne";
-    public final static String WINTER_SEMESTER = "Hiver";
-    public final static String SUMMER_SEMESTER = "Ete";
     public final static String LOAD_COMMAND = "CHARGER";
     public final static String REGISTER_COMMAND = "INSCRIRE";
 
@@ -22,6 +20,14 @@ public class Model {
 
         ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
         return (ArrayList<Course>) ois.readObject();
+    }
+
+    public void sendRegistration(String prenom, String nom, String email, String matricule, Course course) throws IOException {
+        Socket socket = new Socket("127.0.0.1", 1337);
+        ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+        oos.writeObject(REGISTER_COMMAND);
+        oos.writeObject(new RegistrationForm(prenom, nom, email, matricule, course));
+        socket.close();
     }
 
 
