@@ -88,11 +88,32 @@ public class View extends HBox {
         // Set background color
         this.setStyle("-fx-background-color: #EFEBCE;");
 
-// Add separator between left VBox and right VBox
+        // Add separator between left VBox and right VBox
         Separator separator = new Separator(Orientation.VERTICAL);
         this.getChildren().addAll(leftVBox, separator, rightVBox);
         this.setSpacing(20);
         this.setAlignment(Pos.TOP_CENTER);
+
+        // Set tool tips for text fields
+        Tooltip firstNameTip = new Tooltip("""
+                Un prénom doit :
+                - commencer par une majuscule
+                - avoir aucun espace au début et à la fin
+                - être composé uniquement de lettres""");
+        Tooltip nameTip = new Tooltip("""
+                Un nom doit :
+                - commencer par une majuscule
+                - avoir aucun espace au début et à la fin
+                - être composé uniquement de lettres""");
+        Tooltip emailTip = new Tooltip("""
+                Un e-mail doit :
+                - avoir aucun espace
+                - avoir aucun caractère spécial, tel que # ! % $ ‘ & + * – / = ? ^ _`. { | } ~""");
+        Tooltip matriculeTip = new Tooltip("Un matricule doit être composé de 8 chiffres");
+        firstNameTextField.setTooltip(firstNameTip);
+        nameTextField.setTooltip(nameTip);
+        emailTextField.setTooltip(emailTip);
+        matriculeTextField.setTooltip(matriculeTip);
 
     }
 
