@@ -231,8 +231,8 @@ public class Server {
             bw.append("\n");
             bw.close();
 
-            String message = "\n\u001B[32mFélicitations ! Inscription réussie de " + registrationForm.getPrenom() +
-                    " au cours " + registrationForm.getCourse().getCode() + ".\u001B[0m";
+            String message = "Félicitations ! Inscription réussie de " + registrationForm.getPrenom() +
+                    " au cours " + registrationForm.getCourse().getCode() + ".";
 
             objectOutputStream.writeObject(message);
 
@@ -242,7 +242,7 @@ public class Server {
             System.out.println("Alerte : Erreur lors de la lecture du registrationForm ou de l'écriture dans le " +
                     "fichier inscription.txt.");
             try {
-                objectOutputStream.writeObject("\n\u001B[31mUne erreur est survenue. Échec de l'inscription...\u001B[0m");
+                objectOutputStream.writeObject("Une erreur est survenue. Échec de l'inscription...");
             } catch (IOException ex) {
                 System.out.println("Alerte : Erreur lors de la lecture du registrationForm ou de l'écriture dans le " +
                         "fichier inscription.txt.");
@@ -253,7 +253,7 @@ public class Server {
             System.out.println("La classe RegistrationForm est introuvable.");
 
             try {
-                objectOutputStream.writeObject("\n\u001B[31mUne erreur est survenue. Échec de l'inscription...\u001B[0m");
+                objectOutputStream.writeObject("Une erreur est survenue. Échec de l'inscription...");
             } catch (IOException ex) {
                 System.out.println("Alerte : Erreur lors de la lecture du registrationForm ou de l'écriture dans le " +
                         "fichier inscription.txt.");
