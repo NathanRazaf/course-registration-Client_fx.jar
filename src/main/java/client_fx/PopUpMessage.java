@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 public class PopUpMessage {
     private final HBox bottomHBox;
-    public PopUpMessage(Boolean success) {
+    public PopUpMessage(Boolean success, Label message) {
         Label label = new Label(success ? "Success!" : "Error");
         label.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
         Label displayFace = new Label(success ? ":)" : ":(");
@@ -18,7 +18,7 @@ public class PopUpMessage {
         HBox topHBox = new HBox(150, label, displayFace);
         topHBox.setAlignment(Pos.CENTER);
 
-        bottomHBox = new HBox();
+        bottomHBox = new HBox(message);
         bottomHBox.setAlignment(Pos.CENTER_LEFT);
 
         VBox root = new VBox(20, topHBox, bottomHBox);
@@ -30,12 +30,9 @@ public class PopUpMessage {
         Stage popupStage = new Stage();
         popupStage.setScene(scene);
         popupStage.show();
-
     }
 
     public HBox getBottomHBox() {
         return bottomHBox;
     }
-
-
 }
