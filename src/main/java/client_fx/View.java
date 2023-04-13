@@ -4,10 +4,12 @@ import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
 import server.models.Course;
 
+/**
+ * La classe View représente la partie graphique de l'application.
+ */
 public class View extends HBox {
 
     private final TableView<Course> coursesTable;
@@ -23,6 +25,9 @@ public class View extends HBox {
     private final Button sendButton;
     private final Button loadButton;
 
+    /**
+     * La méthode View est le constructeur qui instancie la partie graphique de l'application lorsqu'on l'appelle.
+     */
     public View() {
         // Set up left side of the window
         Label coursesTitleLabel = new Label("Liste des cours");
@@ -117,45 +122,93 @@ public class View extends HBox {
 
     }
 
+    /**
+     * La méthode getCoursesTable retourne le tableau coursesTable contenant les cours disponibles.
+     * @return TableView&lt;Course&gt; coursesTable
+     */
     public TableView<Course> getCoursesTable() {
         return coursesTable;
     }
 
+    /**
+     * La méthode getCode retourne la colonne code qui contient les codes des cours dans le tableau coursesTable.
+     * @return TableColumn&lt;Course, String&GT; code
+     */
     public TableColumn<Course, String> getCode() {
         return code;
     }
 
+    /**
+     * La méthode getCours retourne la colonne cours qui contient les noms des cours dans le tableau coursesTable.
+     * @return TableColumn&lt;Course, String&gt; cours
+     */
     public TableColumn<Course, String> getCours() {
         return cours;
     }
 
+    /**
+     * La méthode getSemesterComboBox retourne la boîte de sélection semesterComboBox qui contient les différents choix
+     * disponibles pour la session à charger.
+     * @return ComboBox&lt;String&gt; semesterComboBox
+     */
     public ComboBox<String> getSemesterComboBox() {
         return semesterComboBox;
     }
 
+    /**
+     * La méthode getFirstNameTextField retourne le champ de texte firstNameTextField qui va contenir le prénom
+     * entré par l'utilisateur.
+     * @return TextField firstNameTextField
+     */
     public TextField getFirstNameTextField() {
         return firstNameTextField;
     }
 
+    /**
+     * La méthode getNameTextField retourne le champ de texte nameTextField qui va contenir le nom
+     * entré par l'utilisateur.
+     * @return TextField nameTextField
+     */
     public TextField getNameTextField() {
         return nameTextField;
     }
 
+    /**
+     * La méthode getEmailTextField retourne le champ de texte emailTextField qui contiendra l'email
+     * entré par l'utilisateur.
+     * @return TextField emailTextField
+     */
     public TextField getEmailTextField() {
         return emailTextField;
     }
 
+    /**
+     * La méthode getMatriculeTextField retourne le champ de texte matriculeTextField qui contiendra le matricule
+     * entré par l'utilisateur.
+     * @return TextField matriculeTextField
+     */
     public TextField getMatriculeTextField() {
         return matriculeTextField;
     }
 
+    /**
+     * La méthode getLoadButton retourne le bouton loadButton sur lequel l'utilisateur clique pour
+     * charger le tableau de cours.
+     * @return Button loadButton
+     */
     public Button getLoadButton() {
         return loadButton;
     }
 
+    /**
+     * La méthode getSendButton retourne le bouton sendButton sur lequel l'utilisateur clique pour
+     * envoyer son formulaire d'inscription au serveur.
+     * @return Button sendButton
+     */
     public Button getSendButton() {
         return sendButton;
     }
+
 }
 
 
