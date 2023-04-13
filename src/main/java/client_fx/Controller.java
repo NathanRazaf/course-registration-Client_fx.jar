@@ -9,10 +9,23 @@ import server.models.Course;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * La classe Controller est la partie contrôleur du MVC. Le Controller contient les méthodes à implémenter lorsque
+ * l'utilisateur clique sur les boutons "Charger" et "Envoyer" dans l'interface.
+ */
 public class Controller {
     private Model model;
     private View view;
 
+    /**
+     * La méthode Controller est le constructeur de la classe Controller. Controller fait le lien entre le modèle et la
+     * vue de l'application.
+     * Le paramètre m est de type Model et représente la partie modèle du MVC, et le paramètre v est de type View et
+     * représente la partie vue du MVC.
+     *
+     * @param m modèle (fonctionnement) de l'application
+     * @param v vue de l'application
+     */
     public Controller(Model m, View v) {
         this.model=m;
         this.view=v;
