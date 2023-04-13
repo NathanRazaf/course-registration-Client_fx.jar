@@ -32,7 +32,7 @@ public class Model {
      * Course n'existe pas.
      *
      * @param semester session choisie
-     * @return liste de cours ArrayList&lt;Course&gt qui contient les cours pour la session choisie
+     * @return liste de cours ArrayList&lt;Course&gt; qui contient les cours pour la session choisie
      * @throws IOException si le stream ne peut pas être lu
      * @throws ClassNotFoundException si la classe Course n'existe pas
      */

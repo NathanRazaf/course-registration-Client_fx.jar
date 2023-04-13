@@ -4,9 +4,12 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * La classe Main représente le lanceur principal de l'application.
+ */
 public class Main extends Application {
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
         Model model = new Model();
         View mainLayout = new View();
         Controller controller = new Controller(model, mainLayout);
@@ -16,6 +19,10 @@ public class Main extends Application {
         stage.show();
     }
 
+    /**
+     * La méthode launch dans le main() sert à lancer l'application graphique, avec pour paramètre args.
+     * @param args est le paramètre du main
+     */
     public static void main(String[] args) {
         launch(args);
     }
