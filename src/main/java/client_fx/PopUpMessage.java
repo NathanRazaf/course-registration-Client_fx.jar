@@ -7,8 +7,17 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+/**
+ * La classe PopUpMessage représente la fenêtre qui affichera l'erreur ou la confirmation dans l'inscription
+ * effectuée par l'utilisateur.
+ */
 public class PopUpMessage {
-    private final HBox bottomHBox;
+    /**
+     * La méthode PopUpMessage est le constructeur qui instancie la nouvelle fenêtre pour afficher le message,
+     * qui sera soit un message de succès, soit un message d'erreur, dépendamment du booléen success.
+     * @param success le booléen qui indique si le message sera un succès ou une erreur
+     * @param message le message à afficher sur la nouvelle fenêtre
+     */
     public PopUpMessage(Boolean success, Label message) {
         Label label = new Label(success ? "Success!" : "Error");
         label.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
@@ -18,7 +27,7 @@ public class PopUpMessage {
         HBox topHBox = new HBox(150, label, displayFace);
         topHBox.setAlignment(Pos.CENTER);
 
-        bottomHBox = new HBox(message);
+        HBox bottomHBox = new HBox(message);
         bottomHBox.setAlignment(Pos.CENTER_LEFT);
 
         VBox root = new VBox(20, topHBox, bottomHBox);
@@ -30,9 +39,5 @@ public class PopUpMessage {
         Stage popupStage = new Stage();
         popupStage.setScene(scene);
         popupStage.show();
-    }
-
-    public HBox getBottomHBox() {
-        return bottomHBox;
     }
 }
