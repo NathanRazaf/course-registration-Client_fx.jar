@@ -1,0 +1,29 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="run_main.jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/client_fx_jar</output-path>
+    <root id="archive" name="course-registration-Client_fx.jar.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/client_fx/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="course-registration-Client_fx.jar" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/19/javafx-graphics-19-mac.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/19/javafx-fxml-19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/19/javafx-graphics-19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/19/javafx-fxml-19-mac.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/javafx/lib/javafx-swt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/javafx/lib/javafx.web.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/javafx/lib/javafx.base.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/javafx/lib/javafx.fxml.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/javafx/lib/javafx.media.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/javafx/lib/javafx.swing.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/javafx/lib/javafx.controls.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/javafx/lib/javafx.graphics.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/controlsfx/controlsfx/11.1.2/controlsfx-11.1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/dlsc/formsfx/formsfx-core/11.5.0/formsfx-core-11.5.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/19/javafx-controls-19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/19/javafx-base-19-mac.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/19/javafx-controls-19-mac.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/19/javafx-base-19.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
